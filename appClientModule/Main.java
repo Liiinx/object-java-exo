@@ -3,6 +3,11 @@ import java.util.Scanner;
 public class Main {
 	public static void main(String[] args) {
 		
+		//Cat defaultCat1 = new Cat("miaou", 20, 10, "chat de goutière");
+		//Person defaultPerson1 = new Person();
+		//defaultPerson1.adopter(defaultCat1);
+		
+		
 		// choice character
 		Scanner scanner = new Scanner(System.in);
         System.out.println("Bonjour !!");
@@ -22,18 +27,17 @@ public class Main {
     		System.out.println(person);
     		Cat defaultCat = new Cat("miaou", 20, 10, "chat de goutière");
     		
-    		while (defaultCat.point >= 0 && defaultCat.point < 70 && defaultCat.getLive() > 0) {
+    		while (defaultCat.point >= 0 && defaultCat.point < 80 && defaultCat.getLive() > 0) {
 	            System.out.println("Souhaitez vous taper ou donner à manger au chat ? \n taper : 1 \n manger : 2");
 	            int choice = scanner.nextInt();
 	            if (choice == 1) {
-	            	person.taper(defaultCat);
+	            	person.taper(defaultCat, scanner);
 	            } else {
 	            	person.giveFood(defaultCat);
 	            }
-    		
 	    		if (defaultCat.point <= 0) {
 	    			person.killCat(defaultCat, true);
-	    		} else if(defaultCat.point > 70)  {
+	    		} else if(defaultCat.point > 80)  {
 	    			person.killCat(defaultCat, false);
 	    		}
     		}
