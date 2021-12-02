@@ -4,12 +4,10 @@ public class Cat extends Creature {
 	private String species;
 	private int live;
 	
-	Cat( String p_name, double p_height, double p_weight, String p_species) {
-    	this.height = p_height;
-    	this.weight = p_weight;
-    	this.name = p_name;
+	Cat(String name, double height, double weight, String p_species) {
+		super(height, weight, name);
+		super.point = 30;
     	this.setSpecies(p_species);
-    	this.point = 30;
     	this.setLive(7);
     }
 

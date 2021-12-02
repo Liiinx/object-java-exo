@@ -7,18 +7,18 @@ public class Person extends Creature {
     Person() {
     	this.setEmail("john.rambo@killer.com");
     	this.setAddress("texas");
-    	this.height = 195;
-    	this.weight = 90;
-    	this.name = "john";
+    	super.height = 195;
+    	super.weight = 90;
+    	super.name = "john";
     	this.point = 50;
     }
     
     Person(String p_email, String p_address, String p_name) {
     	this.setEmail(p_email);
     	this.setAddress(p_address);
-    	this.height = 175;
-    	this.weight = 70;
-    	this.name = p_name;
+    	super.height = 175;
+    	super.weight = 70;
+    	super.name = p_name;
     	this.point = 50;
     }
     

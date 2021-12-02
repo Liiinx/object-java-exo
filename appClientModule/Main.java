@@ -22,7 +22,7 @@ public class Main {
     		System.out.println(person);
     		Cat defaultCat = new Cat("miaou", 20, 10, "chat de goutière");
     		
-    		while (defaultCat.point >= 0 && defaultCat.point < 100 && defaultCat.getLive() > 0) {
+    		while (defaultCat.point >= 0 && defaultCat.point < 70 && defaultCat.getLive() > 0) {
 	            System.out.println("Souhaitez vous taper ou donner à manger au chat ? \n taper : 1 \n manger : 2");
 	            int choice = scanner.nextInt();
 	            if (choice == 1) {
@@ -33,7 +33,7 @@ public class Main {
     		
 	    		if (defaultCat.point <= 0) {
 	    			person.killCat(defaultCat, true);
-	    		} else if(defaultCat.point > 100)  {
+	    		} else if(defaultCat.point > 70)  {
 	    			person.killCat(defaultCat, false);
 	    		}
     		}
