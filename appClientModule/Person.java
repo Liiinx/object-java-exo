@@ -44,6 +44,7 @@ public class Person extends Creature {
 	public void taper(Cat cat) {
 		cat.point -= 20;
 		System.out.println("Vous venez de taper le chat, il perd 20 points de vie");
+		System.out.println("le chat a maintenant " + cat.point);
 		if (cat.point <= 0) {
 			cat.setLive(cat.getLive() - 1);
 		}
@@ -51,8 +52,18 @@ public class Person extends Creature {
 	public void giveFood(Cat cat) {
 		cat.point += 20;
 		System.out.println("Vous etes gentil, le chat gagne 20 points de vie");
+		System.out.println("le chat a maintenant " + cat.point);
 		if (cat.point > 100) {
 			cat.setLive(cat.getLive() - 1);
+		}
+	}
+	public void killCat(Cat cat, boolean typeOfDeath) {
+		if(typeOfDeath) {
+			System.out.println("Vous venez de tuer un chat !! \n bien joué mais le chat a encore " + cat.getLive() +  " vies");
+			cat.point = 30;
+		} else {
+			System.out.println("Le chat est mort d'une crise cardiaque \n Le chat a encore " + cat.getLive() +  " vies");
+			cat.point = 30;
 		}
 	}
  

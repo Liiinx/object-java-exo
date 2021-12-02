@@ -22,26 +22,22 @@ public class Main {
     		System.out.println(person);
     		Cat defaultCat = new Cat("miaou", 20, 10, "chat de goutière");
     		
-    		while (defaultCat.point >= 0 && defaultCat.point < 100 && defaultCat.getLive() >= 0) {
+    		while (defaultCat.point >= 0 && defaultCat.point < 100 && defaultCat.getLive() > 0) {
 	            System.out.println("Souhaitez vous taper ou donner à manger au chat ? \n taper : 1 \n manger : 2");
 	            int choice = scanner.nextInt();
 	            if (choice == 1) {
 	            	person.taper(defaultCat);
-	            	System.out.println("le chat a maintenant " + defaultCat.point);
 	            } else {
 	            	person.giveFood(defaultCat);
-	            	System.out.println("le chat a maintenant " + defaultCat.point);
 	            }
     		
 	    		if (defaultCat.point <= 0) {
-	    			System.out.println("Vous venez de tuer un chat !! \n bien joué mais un chat a 7 vies");
-	    			defaultCat.point = 30;
+	    			person.killCat(defaultCat, true);
 	    		} else if(defaultCat.point > 100)  {
-	    			System.out.println("Le chat est mort d'une crise cardiaque \n bien joué mais un chat a 7 vies");
-	    			defaultCat.point = 30;
+	    			person.killCat(defaultCat, false);
 	    		}
-	    		System.out.println(defaultCat.getLive());
     		}
+        	System.out.println("c'était pour de faux hein !");
     		scanner2.close();
         } else {
         	//cat
@@ -59,10 +55,8 @@ public class Main {
 	            int choice = scanner3.nextInt();
 	            if (choice == 1) {
 	            	cat.griffer(defaultPerson);
-	            	//System.out.println("Rambo a maintenant " + defaultPerson.point);
 	            } else {
 	            	cat.ronronner(defaultPerson);
-	            	//System.out.println("le chat a maintenant " + defaultCat.point);
 	            }
     		}
     		

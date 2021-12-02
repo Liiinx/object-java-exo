@@ -1,5 +1,5 @@
 
-public class Creature implements Espece {
+abstract class Creature implements Espece {
 	
 	protected double height;
 	protected double weight;
@@ -12,5 +12,3 @@ public class Creature implements Espece {
 		return "Vous etes de l'espèce " + this.getClass().getSimpleName() + "!!!!!";
 	}
 }
-
-
